@@ -23,7 +23,7 @@ function CodeEditor() {
         setLoading(true);   
         setError("");
         try {
-            const response = await axios.post("http://localhost:5000/analyze", { code });
+            const response = await axios.post("https://ai-code-review-backend-p5ve.vercel.app/analyze", { code });
             const formattedText = formatResponse(response.data.ai_feedback);
             setAiFeedback(formattedText);
         } catch (error) {
